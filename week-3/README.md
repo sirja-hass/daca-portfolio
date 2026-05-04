@@ -1,1 +1,1 @@
-# Nädal 3 SQL Cleaning
+# Nädal 3 SQL JOINs
