@@ -1,0 +1,20 @@
+{
+    "sqltools.connections": [
+        {
+            "pgOptions": {
+                "ssl": {
+                    "rejectUnauthorized": false
+                }
+            },
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "db.vyzckyivkxfljnzxuawl.supabase.co",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "UrbanStyle DACA",
+            "database": "postgres",
+            "username": "postgres",
+            "password": "Parooluus123"
+        }
+    ]
+}
