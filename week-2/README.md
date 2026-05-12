@@ -18,7 +18,6 @@ products_test
 ## Puhastamine
 Kasutasin kategooriate standardiseerimiseks:
 
-```sql
 UPDATE products_test
 SET category = INITCAP(TRIM(category))
 WHERE category != INITCAP(TRIM(category));
