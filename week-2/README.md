@@ -16,7 +16,12 @@ products_test
 - NULL cost_price või category väärtustega ridu ei leitud.
 
 ## Puhastamine
-Kontrollisin kategooriate standardiseerimist `INITCAP(TRIM(category))` abil, kuid muudatusi ei tehtud, sest kategooriad olid juba korrektses formaadis.
+Kasutasin kategooriate standardiseerimiseks:
+
+```sql
+UPDATE products_test
+SET category = INITCAP(TRIM(category))
+WHERE category != INITCAP(TRIM(category));
 
 ## Kokkuvõte
 Products tabeli andmekvaliteet oli üldiselt hea. Peamine probleem olid duplikaatsed tootenimed.
