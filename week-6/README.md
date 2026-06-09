@@ -10,3 +10,7 @@ Minu panus: **Pärnu dashboard ja andmenarratiiv**.
 - [Andmelugu](individual/week6_parnu_narrative.md)
 - [Executive summary](individual/week6_executive_summary.md)
 - [Meeskonna koondvaade](team/week6_team_combined_view.md)
+
+## AI kasutamine
+
+Kasutasin ChatGPT-d Power BI dashboardi kujunduse, KPI-mõõdikute ja annotatsioonide täiustamiseks. 
