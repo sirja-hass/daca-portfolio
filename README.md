@@ -9,11 +9,11 @@ Liitusin DACA programmiga, sest soovin arendada oma andmeinseneeria oskusi ja sa
 ## Nädala kaupa
 | Nädal | Teema | Staatus |
 |-------|-------|---------|
-| 0 | Onboarding | Käimas |
-| 1 | SQL Basics | Tulemas |
-| 2 | SQL Cleaning | Tulemas |
-| 3 | SQL JOINs | Tulemas |
-| 4 | SQL Aggregation | Tulemas |
-| 5-6 | Visualiseerimine | Tulemas |
-| 7-8 | Python | Tulemas |
-| 9-10 | Portfoolio + Karjäär | Tulemas |
+| 0 | Onboarding | Valmis |
+| 1 | SQL Basics | Valmis |
+| 2 | SQL Cleaning | Valmis |
+| 3 | SQL JOINs | Valmis |
+| 4 | SQL Aggregation | Valmis |
+| 5-6 | Visualiseerimine | Valmis |
+| 7-8 | Python | Lisamisel |
+| 9-10 | Portfoolio + Karjäär | Lisamisel |

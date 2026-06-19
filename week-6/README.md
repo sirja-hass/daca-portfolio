@@ -9,7 +9,7 @@ Minu panus: **Pärnu dashboard ja andmenarratiiv**.
 - [Pärnu dashboard](individual/week6_parnu_dashboard_screenshot.png)
 - [Andmelugu](individual/week6_parnu_narrative.md)
 - [Executive summary](individual/week6_executive_summary.md)
-- [Meeskonna koondvaade](team/week6_team_combined_view.md)
+- [Meeskonna koondvaade](team/readme.md)
 
 ## AI kasutamine
 
