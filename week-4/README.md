@@ -23,6 +23,7 @@ Hooajalisi müügi- ja turundusstrateegiaid tasub kavandada eelkõige perioodide
 - [Minu agregatsioonipäringud](individual/myygi_koondandmed.sql)
 - [Tulemuste kuvatõmmis](individual/myygikoond.png)
 - [Meeskonna koondraport](team/README.md)
+- [Meeskonna slaidiesitlus](https://docs.google.com/presentation/d/1yxUbckxenA22lvdZTj7cDzkRZiqxVss4P9S3SuMcmtY/edit?slide=id.p#slide=id.p)
 
 ## AI kasutamine
 

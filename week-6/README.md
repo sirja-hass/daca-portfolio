@@ -11,6 +11,7 @@ Minu panus: **Pärnu dashboard ja andmenarratiiv**.
 - [Andmelugu](individual/week6_parnu_narrative.md)
 - [Executive summary](individual/week6_executive_summary.md)
 - [Meeskonna koondvaade](team/week6_team_combined_view.md)
+- [Meeskonna slaidiesitlus](https://docs.google.com/presentation/d/1d_Kse5csm-8SxNL4vULd8zEjzDnpZsU9GCmHDmwn1n0/edit?slide=id.p#slide=id.p)
 
 ## AI kasutamine
 
