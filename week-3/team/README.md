@@ -1,13 +1,35 @@
-MEESKOND: TOODE,  NÄDAL: 3, TEGELANE:  Anna Mets
-PEAMISED LEIUD (SUURIM ÜLLATUS, SOOVITUS ANNALE, PUUDUVAD ANDMED):
-Tuuli: Tundmatu lojaalsusprogrammiga kliendid moodustavad ca kaks korda suurema kogumüügi võrreldes teiste tasemetega, mida tasuks rohkem uurida.
-Triin: Paljud kadunud kliendid on juba aastast 2020, ligi iga viies klient on kadunud.  Segmenteerida ja sihtida kampaaniatega eraldi gruppe. Samas puuduvad andmed, kas GDPR lubab vanemaid kliente püüda.
-Jörgen: Tooted, mida pole müüdud: 12. Tellida juurde tooteid, mille laoseis on madal. Pakkuda suurt allahindlust toodetele, mida pole müüdud või eemaldada.
-Sirja: Füüsilised kauplused annavad ettevõtte peamise müügitulu, samuti on keskmine müük kliendi kohta suurem. Soovitus kasvatada online-kanali nähtavust väiksemates piirkondades.
-Mis oli meie peamine JÄRELDUS? Kõige tugevam müügikanal on füüsiline pood, online’is läheb väga suur hulk kliente kaduma (kes kunagi ostu ei soorita). Kõige tugevaimad müügipiirkonnad on Tallinna ja Tartu füüsilised poed, aga samas läheb just nende linnade kliente veebis kõige rohkem kaduma. Tooteid, mida pole kunagi müüdud on 12.
+# Nädal 3: meeskonna JOIN-analüüs
 
+**Meeskond:** Toode
 
-Mis OTSUS muutuks selle põhjal? Suunata suuremad investeeringud Tallinna ja Tartu kauplustesse, kasvatada online kanalite nähtavust väiksemates kohtades. Planeerida segmentidele sihitud kampaaniaid kadunud klientide tagasivõitmiseks. Müümata toodetele teha allahindlused või eemaldada.
+**Tegelane:** Anna Mets
 
+## Liikmete peamised leiud
 
-Mis meid ÜLLATAS? Poe kliendid teevad rohkem korduvoste. Ligi iga viies klient on kadunud klient. Kogumüügi suurus (EUR) 10 suuremal kliendil jääb vahemikku ca 20 000-27 000. Kõige suurema summa eest müüakse jalanõusid.
+- **Tuuli — lojaalsusprogramm:** teadmata lojaalsustasemega kliendid moodustavad ligikaudu kaks korda suurema kogumüügi kui teiste lojaalsustasemete kliendid. Selle põhjuseid tuleb täiendavalt uurida.
+- **Triin — kadunud kliendid:** paljud kadunud kliendid pärinevad juba 2020. aastast ning ligi iga viies klient on kadunud. Neid tasub segmentida ja sihitud kampaaniatega eraldi kõnetada.
+- **Jörgen — tooted:** 12 toodet ei ole kordagi müüdud. Madala laoseisuga populaarseid tooteid tasub juurde tellida ning müümata toodetele teha allahindlus või need valikust eemaldada.
+- **Sirja — müügikanalid:** füüsilised kauplused annavad ettevõtte peamise müügitulu ning nende müük kliendi kohta on online-kanalist suurem. Online-kanali nähtavust tasub kasvatada väiksemates piirkondades.
+
+## Peamine järeldus
+
+UrbanStyle'i tugevaim müügikanal on füüsiline pood ning kõige tugevamad müügipiirkonnad on Tallinn ja Tartu. Online-kanalis on rohkem kliente, kes ei jõua ostuni. Lisaks on ligi viiendik klientidest kadunud ning 12 toodet pole kordagi müüdud.
+
+## Soovitus ja muutuv otsus
+
+Suunata suuremad investeeringud Tallinna ja Tartu kauplustesse ning kasvatada online-kanali nähtavust väiksemates piirkondades. Kadunud klientidele tasub planeerida segmendipõhised tagasivõitmise kampaaniad. Müümata toodetele tuleks teha allahindlus või eemaldada need tootevalikust.
+
+## Suurimad üllatused
+
+- Poe kliendid teevad rohkem korduvoste.
+- Ligi iga viies klient on kadunud klient.
+- Kümne suurima kliendi kogumüük jääb ligikaudu 20 000–27 000 euro vahele kliendi kohta.
+- Kõige suurema müügisummaga tootekategooria on jalanõud.
+
+## Puuduvad andmed
+
+Puudus teave selle kohta, kas ja millisel õiguslikul alusel võib varasemaid kliente turunduskampaaniatega sihtida. Kampaaniate kavandamisel tuleb kontrollida klientide nõusolekuid ja kohaldatavaid andmekaitsereegleid.
+
+## Meeskonna esitlus
+
+[Ava nädala 3 meeskonna slaidiesitlus](https://docs.google.com/presentation/d/1_XV9rattaz3KDWFpchCHEJLrqbvXODSJJUfl8Y793Mg/edit?slide=id.p#slide=id.p)
