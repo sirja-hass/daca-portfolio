@@ -28,6 +28,8 @@ Poekanal teenis perioodil suurema k채ibe kui online-kanal. Uute klientide arv n�
 - [Meeskonna investorivaate kirjeldus](team/README.md)
 - [Meeskonna koondvaate kuvat천mmis](team/team_week5.png)
 
+![Turunduse tulemuslikkuse Power BI dashboard](individual/images/marketing_dashboard_2023_2024.png)
+
 ## AI kasutamine
 
 Kasutasin AI-d dashboardi infohierarhia, diagrammivalikute ja 채rit천lgenduse t채psustamiseks. Kontrollisin soovitused oma andmete ja Power BI vaate p천hjal 체le.

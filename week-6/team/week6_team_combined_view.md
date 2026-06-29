@@ -1,6 +1,7 @@
 # Nädal 6: meeskonna koondvaade
 
-**Meeskond:** Toode  
+**Meeskond:** Toode
+
 **Tegelane:** Anna
 
 ## Koondlugu
@@ -21,3 +22,7 @@ Investeerida e-poodi ja Tallinnasse, sest need juhivad kasvu. Tartu vajab regioo
 ## Puuduvad andmed
 
 Puuduvad konkurentide hinnad ja turuosa andmed regiooniti ning kaupluste tegevuskulud asukohati. Seetõttu ei saa Tartu languse põhjust ega asukohtade tegelikku kasumlikkust täpselt hinnata.
+
+## Meeskonna esitlus
+
+[Ava nädala 6 slaidiesitlus](https://docs.google.com/presentation/d/1d_Kse5csm-8SxNL4vULd8zEjzDnpZsU9GCmHDmwn1n0/edit?slide=id.p#slide=id.p)

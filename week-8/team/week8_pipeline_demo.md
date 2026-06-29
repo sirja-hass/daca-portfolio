@@ -1,76 +1,48 @@
-# Week 8 Pipeline Demo — UrbanStyle
+# Nädal 8: UrbanStyle'i ETL-pipeline'i demo
 
 ## Eesmärk
 
-Meeskonna eesmärk oli muuta UrbanStyle OÜ iganädalane käsitsi analüüs automaatseks Python pipeline'iks.
+Muuta UrbanStyle'i iganädalane käsitsi koostatav müügiülevaade automaatseks ja veakindlaks Python pipeline'iks.
 
-Pipeline teeb neli sammu:
+## Arhitektuur ja rollid
 
-1. Extract — pärib andmed Supabase API-st.
-2. Transform — puhastab andmed ja arvutab KPI-d.
-3. Visualize — loob graafikud.
-4. Export — salvestab CSV ja HTML väljundid.
+| Etapp | Roll | Moodul | Vastutus |
+| --- | --- | --- | --- |
+| Extract | A: API Query | `data_fetcher.py` | Supabase'i päringud, pagination, retry ja CSV fallback |
+| Transform | B: Data Processing | `transform.py` | Andmete puhastamine, ühendamine ja KPI-d |
+| Visualize | C: Visualization | `visualize_export.py` | Plotly graafikud ning CSV- ja HTML-eksport |
+| Orchestrate | D: Automation | `pipeline.py` | Kogu töövoo käivitamine, logimine ja veahaldus |
 
-## Rollid
+## Integratsioonitesti tulemus
 
-- Roll A: API Query — `data_fetcher.py`
-- Roll B: Data Processing — `transform.py`
-- Roll C: Visualization + Saving — `visualize_export.py`
-- Roll D: Automation Script — `pipeline.py`
-
-## Käivitamine
-
-```bash
-python pipeline.py
-```
-
-## Demo Väljund
-
-Pipeline jooksis edukalt läbi:
+Pipeline läbis kõik neli etappi:
 
 ```text
-URBANSTYLE ETL PIPELINE
-ETAPP 1: EXTRACT OK
-ETAPP 2: TRANSFORM OK
-ETAPP 3: VISUALIZE OK
-ETAPP 4: EXPORT OK
-
-PIPELINE LÕPETATUD
-Aeg: 5.5s
-Käive: 2,691,235.81 EUR
-Kliente: 2464
-AOV: 287.80 EUR
-CSV: output/pipeline_results_YYYYMMDD_HHMMSS.csv
+EXTRACT OK
+TRANSFORM OK
+VISUALIZE OK
+EXPORT OK
 ```
 
-## Loodud Failid
+Kontrollkäivituse tulemus:
 
-Pipeline salvestab tulemused `output/` kausta:
+- kogukäive ligikaudu 2,69 miljonit eurot;
+- 2464 unikaalset klienti;
+- keskmine tellimuse väärtus 287,80 eurot;
+- väljundina ajatempliga CSV ja kaks HTML-raportit.
 
-- `pipeline_results_YYYYMMDD_HHMMSS.csv`
-- `weekly_revenue_YYYYMMDD_HHMMSS.html`
-- `kpi_summary_YYYYMMDD_HHMMSS.html`
+## Töökindlus
 
-## Peamine Järeldus Markole
+- API päringud loetakse lehekülgede kaupa;
+- ajutiste vigade korral kasutatakse retry'd ja exponential backoff'i;
+- API tõrke korral kasutatakse CSV-varuandmeid;
+- etappide tegevused ja vead kirjutatakse logifaili;
+- visualiseerimise tõrge ei takista CSV-väljundi loomist.
 
-2023-2024 puhastatud andmete põhjal oli UrbanStyle kogukäive umbes 2.69 miljonit eurot, unikaalseid kliente oli 2464 ja keskmine tellimuse väärtus oli 287.80 eurot.
+## Peamine järeldus Markole
 
-## Mis Otsus Selle Põhjal Muutub?
+Iganädalast müügiülevaadet ei pea enam käsitsi koostama. Pipeline muudab andmete pärimise ja raporti loomise korratavaks ning vähendab käsitsi tehtavate vigade riski.
 
-Iganädalast müügiülevaadet ei pea enam käsitsi koostama. Sama töövoog saab käia ühe käsuga ning tulemused on kohe CSV ja HTML kujul jagatavad.
+## AI kasutamine
 
-## Mis Juhtub, Kui Supabase On Maas?
-
-Pipeline proovib kõigepealt Supabase API-st andmeid pärida. Kui API ei vasta, kasutab `datasets/` kaustas olevaid CSV fallback-faile.
-
-## Edasijõudnute Elemendid
-
-- Pagination suurte API tabelite jaoks.
-- Retry loogika API tõrgete korral.
-- CSV fallback Supabase tõrke korral.
-- Failipõhine logging `logs/` kausta.
-- Konfiguratsioon `config.yaml` failis.
-
-## AI Kasutamine
-
-AI aitas kontrollida moodulite omavahelist sobivust, leida veerunimede erinevusi B ja C osa vahel, parandada pagination'i loogikat ning muuta pipeline'i terminaliväljund demo jaoks selgemaks.
+AI aitas kontrollida moodulite omavahelist sobivust, leida veerunimede erinevusi ning täpsustada pagination'i, retry-loogikat ja terminaliväljundit. Lõpptulemus valideeriti pipeline'i tervikkäivitusega.

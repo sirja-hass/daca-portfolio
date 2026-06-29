@@ -1,4 +1,6 @@
-## Investor Dashboard (Roll D – A+B+C süntees)
+# Nädal 5: investori dashboard
+
+**Roll D:** rollide A, B ja C tulemuste süntees
 
 Investor Dashboard koondab kolme rolli (Müük, Turundus ja Operatsioonid) peamised tulemused ühele juhtimisvaatele, et anda kiire ülevaade ettevõtte üldisest tulemuslikkusest.
 
@@ -8,6 +10,8 @@ Investor Dashboard koondab kolme rolli (Müük, Turundus ja Operatsioonid) peami
 * Kliente: 3 042
 * Keskmine tellimuse väärtus: 287 €
 * Aastane kasv võrreldes 2023. aastaga: +19%
+
+![Meeskonna investori dashboard](team_week5.png)
 
 ### Peamised tähelepanekud
 

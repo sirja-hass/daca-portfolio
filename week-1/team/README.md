@@ -1,16 +1,28 @@
-MEESKOND:  TOODE   NÄDAL: 1  |  TEGELANE: Toomas Kask
-ANDMEMAASTIK (Data Landscape):
-- sales (tehingud): 15234 rida, 12 veergu,  ~10% klientidest ei ole registreerinud kliendisüsteemi
-- customers: 3150 rida, 9 veergu, kliendibaas väiksem, kui arvati, kontaktandmeid puudu
-- products: [362 rida, 9  veergu, valikus on kõige rohkem tooteid meestele, teistele sihtrühmadele on  ca 10% vähem valikut ]
-- sales (kanalid/asukohad): poed ja online, poed Tallinnas, Tartus, Pärnus, peamine leid: UrbanStyle’i müük on kahekanaliline ning e-pood mängib ettevõtte käibes olulist rolli, kuigi füüsilised poed moodustavad suurema osa tehingutest.
-SUURIM ÜLLATUS:
-Suur osa kliendibaasist on kättesaamatu.
-SOOVITUS TOOMASELE:
-Soovitame andmetesse süveneda, eemaldada duplikaadid, et tulemused oleksid adekvaatsed. Analüüsida poodide ja e-poe müüükide osakaalu.
-PUUDUVAD ANDMED:
-Kliendiinfo puudub “sales” tabelis 1487 kliendil ja customers tabelis puudub 380 kliendi meiliaadressid.
+# Nädal 1: UrbanStyle'i andmemaastik
 
-Meeskonna slaidid
-https://docs.google.com/presentation/d/1dy4WZY9-amFs1SLXhjyp3hn9sgC6R1XiVZKb0keOdTw/edit?slide=id.g3ddb8b9f226_0_140#slide=id.g3ddb8b9f226_0_140
+**Meeskond:** Toode
 
+**Tegelane:** Toomas Kask
+
+## Tabelite ülevaade
+
+- **`sales`:** 15 234 rida ja 12 veergu. Ligikaudu 10% tehingutest ei ole seotud registreeritud kliendiga.
+- **`customers`:** 3150 rida ja 9 veergu. Kontaktandmetes esineb puuduvaid väärtusi.
+- **`products`:** 362 rida ja 9 veergu. Meestele suunatud tooteid on valikus kõige rohkem; teiste sihtrühmade valik on ligikaudu 10% väiksem.
+- **Kanalid ja asukohad:** müük toimub e-poes ning Tallinna, Tartu ja Pärnu füüsilistes poodides. Füüsilised poed annavad suurema osa tehingutest, kuid e-pood on samuti oluline müügikanal.
+
+## Suurim üllatus
+
+Suur osa kliendibaasist ei ole puuduvate kontaktandmete tõttu turundustegevusteks kättesaadav.
+
+## Soovitus Toomasele
+
+Enne järgmisi analüüse tuleb eemaldada kordused, ühtlustada väärtuste nimekujud ning täpsustada registreerimata klientide käsitlus. Seejärel saab usaldusväärselt võrrelda füüsiliste poodide ja e-poe müügiosakaalu.
+
+## Puuduvad andmed
+
+`sales` tabelis puudub kliendiviide 1487 tehingul ning `customers` tabelis puudub e-posti aadress 380 kliendil.
+
+## Meeskonna esitlus
+
+[Ava nädala 1 slaidiesitlus](https://docs.google.com/presentation/d/1dy4WZY9-amFs1SLXhjyp3hn9sgC6R1XiVZKb0keOdTw/edit?slide=id.g3ddb8b9f226_0_140#slide=id.g3ddb8b9f226_0_140)

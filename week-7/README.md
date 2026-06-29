@@ -1,19 +1,34 @@
-## Nädal 7: Python Pandas — RFM kliendisegmenteerimine
+# Nädal 7: Python ja pandas — RFM-kliendisegmenteerimine
 
-### Minu roll
-Roll D: Visualization ehk visualiseerimine ja leidude esitamine. Minu ülesanne oli Roll C loodud RFM tabeli põhjal koostada Plotly diagrammid, mis näitavad kliendisegmentide jaotust, segmentide profiili ning TOP 10 VIP klienti kogukulutuse järgi. Lisaks koostasin lühikese äritõlgenduse ja soovitused Markole.
+## Minu roll
 
-### Peamised leiud
-- Kõige suuremad kliendigrupid on Potential ja Loyal segmendid, mis näitab, et UrbanStyle'il on palju kliente, keda saab sihitud pakkumiste ja lojaalsusprogrammiga kasvatada väärtuslikumateks klientideks.
-- VIP Champions kliendid on väiksem, aga äriliselt väga oluline segment, sest nad ostavad sagedamini ja kulutavad rohkem. Neile tasub pakkuda eritingimusi, näiteks varajast ligipääsu uutele kollektsioonidele, tasuta saatmist ja personaalsemat klienditeenindust.
-- At Risk ja Lost segmentide puhul on oluline tegutseda kiiresti, näiteks win-back kampaaniaga, sest nende klientide viimasest ostust on möödas rohkem aega ja nad võivad ettevõttest eemalduda.
-- RFM analüüs põhineb ostukäitumisel, mitte ettevõtte olemasoleval `loyalty_tier` väljal. Seetõttu tasub võrrelda RFM segmente lojaalsustasemega, et leida kliendid, kelle ostukäitumine ja ametlik lojaalsusstaatus ei ole kooskõlas.
+Roll D: visualiseerimine ja leidude esitamine. Kasutasin Roll C loodud RFM-tabelit, et koostada Plotly diagrammid kliendisegmentide jaotuse, profiili ning kümne suurima VIP-kliendi kohta. Lisaks sõnastasin tulemuste ärilise tähenduse ja soovitused Markole.
 
-### AI kasutamine
-Kasutasin AI abi RFM tulemuste visualiseerimiseks Plotly abil ning graafikute värvide ja paigutuse parandamiseks. AI aitas sõnastada ka äritõlgenduse nii, et soovitused oleksid seotud konkreetsete kliendisegmentidega.
+## Meetod
 
-### Väljundid
+RFM-analüüs hindab iga kliendi puhul kolme näitajat:
+
+- **Recency:** kui hiljuti klient viimati ostis;
+- **Frequency:** kui sageli klient ostab;
+- **Monetary:** kui palju klient kokku kulutab.
+
+Nende põhjal jagati kliendid segmentidesse `VIP Champions`, `Loyal`, `Potential`, `At Risk` ja `Lost`.
+
+## Peamised leiud
+
+- `Potential` ja `Loyal` on suurimad kliendigrupid ning neid saab lojaalsusprogrammi ja sihitud pakkumistega kasvatada väärtuslikumateks klientideks.
+- `VIP Champions` on väiksem, kuid kõrge väärtusega segment. Neile sobivad varajane ligipääs uutele kollektsioonidele, tasuta saatmine ja personaalsem teenindus.
+- `At Risk` ja `Lost` vajavad kiiret tagasivõitmise kampaaniat, sest nende viimasest ostust on möödunud rohkem aega.
+- RFM-segmendid põhinevad tegelikul ostukäitumisel. Neid tasub võrrelda olemasoleva `loyalty_tier` väljaga, et leida vastuolud ametliku staatuse ja kliendi päris käitumise vahel.
+
+## Väljundid
 
 - [Minu Roll D notebook](individual/week7_rfm_D.ipynb)
 - [RFM-segmentide CSV](individual/rfm_segments.csv)
 - [Meeskonna terviklik notebook](team/week7_rfm_complete.ipynb)
+
+Individuaalne notebook sisaldab Roll D osa ja eeldab sisendina Roll C loodud `rfm_viz` DataFrame'i. Terviklik töövoog on meeskonna notebook'is.
+
+## AI kasutamine
+
+Kasutasin AI-d Plotly visualiseeringute paigutuse ja värvikasutuse parandamiseks ning äriliste soovituste selgemaks sõnastamiseks. Kontrollisin tulemused RFM-andmete ja diagrammide põhjal ise üle.

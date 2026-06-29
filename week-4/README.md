@@ -4,13 +4,15 @@
 Roll A: müügi koondandmed.
 
 ## Tabel
+
 `sales`, `products`
 
-
 ## Tulemused
-Analüüs viitab sellele, et kasvu peamine põhjus oli tellimuste arvu suurenemine, samal ajal kui keskmine tellimusväärtus püsis suhteliselt stabiilne. Alates veebruarist oli näha üldist taastumist ja kasvu. Kõige tugevam kuu oli detsember ja kõige nõrgem jaanuar. Detsember ja suvekuud andsid kokku 41% müügikäibest.
 
-Tootekategooriate lõikes andsid suurima panuse jalanõud ning meeste- ja naisteriided, mistõttu tasub jätkata investeeringuid ja turundustegevusi just tugevamates segmentides.
+- Müügikasvu vedas peamiselt tellimuste arvu suurenemine; keskmine tellimusväärtus püsis suhteliselt stabiilne.
+- Kõige tugevam kuu oli detsember ja kõige nõrgem jaanuar.
+- Detsember ja suvekuud andsid kokku 41% müügikäibest.
+- Suurima panuse andsid jalanõud ning meeste- ja naisteriided.
 
 ## Kokkuvõte
 41% aastakäibest tekkis suvekuudel ja detsembris.
@@ -21,7 +23,6 @@ Hooajalisi müügi- ja turundusstrateegiaid tasub kavandada eelkõige perioodide
 ## Väljundid
 
 - [Minu agregatsioonipäringud](individual/myygi_koondandmed.sql)
-- [Tulemuste kuvatõmmis](individual/myygikoond.png)
 - [Meeskonna koondraport](team/README.md)
 - [Meeskonna slaidiesitlus](https://docs.google.com/presentation/d/1yxUbckxenA22lvdZTj7cDzkRZiqxVss4P9S3SuMcmtY/edit?slide=id.p#slide=id.p)
 

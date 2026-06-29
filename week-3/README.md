@@ -25,3 +25,5 @@ Soovitan jätkata tugevat panust füüsilistesse kauplustesse, eriti Tallinnas j
 - [Meeskonna koondanalüüs](team/README.md)
 - [Meeskonna slaidiesitlus](https://docs.google.com/presentation/d/1_XV9rattaz3KDWFpchCHEJLrqbvXODSJJUfl8Y793Mg/edit?slide=id.p#slide=id.p)
 - [Tulemuste kuvatõmmis](individual/week3_kanalid_kliendid_results.png)
+
+![Nädala 3 JOIN-analüüsi päring ja tulemused](individual/week3_kanalid_kliendid_results.png)

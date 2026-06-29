@@ -1,19 +1,28 @@
-MEESKOND: TOODE | NÄDAL: 2 | TEGELANE: Toomas Kask
-│                                                              
-│  ANDMEKVALITEEDI KOONDRAPORT                                                                                               │
-│  PEAMISED LEIUD:                                             
-│  1. Triin, müügiandmete puhastaja: leitud 5508 probleemi —  korduvad sale_id väärtused (4018), NULL customer_id (1487), tulevikukuuäpäevad (8) eemaldatud. Alles jäi 988 NULL sales_id ehk külalisostu.    
-│  2. Jörgen, kliendiandmete puhastaja: leitud 562 probleemi — [128 duplikaatset emaili, 380 NULL väärtusega emaili. Erineva formaadiga linnade arv oli 54, update käsklusega uuendades jäi alles 12 erinevat linna.      
-│  3. Sirja, tooteandmete puhastaja: leitud 12 probleemi — duplikaatsed tootenimed.      
-│  4. Tuuli, kvaliteedikontrollija: leitud 2655 probleemi — 1487 müüki viitab “olematule kliendile” (IS NULL), 664 juhtu, kus müügihind ja tootehind ei klapi, 592 klienti pole kunagi ostu sooritanud, 12 toodet pole kunagi müüdud.   
-│                                                             
-│  SUURIM ÜLLATUS:                                             
-│  Müügitabeli suur duplikaatide arv, linnade nimekujude lai variatsioon, samas positiivne üllatus, et mõnedes veergudes ei leitud üldse vigu (eriti products tabelis).
-                                                                                                               
-│  SOOVITUS TOOMASELE:                                         
-│  Vaadata üle andmesisestuse loogikad, et tulevikus duplikaate ja vigaseid andmeid vältida. Oleks tarvis ühtset andmesüsteemi.      
-│                                                              
-│  PUUDUVAD ANDMED:                                            
-│  Miinusega summad - kas need on tagastused, sisestusvead, tühistatud ost vms. Tuleks uurida, millega tegemist. Need vajavad eraldi ärireeglite kontrolli. Kas NULL väärtusega kliendiviited ikkagi on kõik külalisostud? 
+# Nädal 2: andmekvaliteedi koondraport
 
-Grupitöö link https://docs.google.com/presentation/d/1A8KvN7d0f7EDag7m9cagzEe5bE2fw8dw/edit?slide=id.g3e132ed0bcd_0_4#slide=id.g3e132ed0bcd_0_4
+**Meeskond:** Toode
+
+**Tegelane:** Toomas Kask
+
+## Peamised leiud
+
+- **Triin — müügiandmed:** 4018 korduvat `sale_id` väärtust, 1487 puuduvat `customer_id` väärtust ja 8 tulevikukuupäevaga tehingut. Pärast kontrolli jäi alles 988 puuduva kliendiviitega tehingut, mida käsitleti külalisostudena.
+- **Jörgen — kliendiandmed:** 128 korduvat ja 380 puuduvat e-posti aadressi. Linnade 54 erinevat nimekuju standardiseeriti 12 linnaks.
+- **Sirja — tooteandmed:** 12 korduvat tootenime; muid kriitilisi puuduvaid väärtusi ega hinnavigu ei leitud.
+- **Tuuli — ristkontroll:** 1487 puuduva kliendiviitega müüki, 664 müügi- ja tootehinna lahknevust, 592 ostuta klienti ning 12 müümata toodet. Need kategooriad võivad osaliselt kattuda.
+
+## Suurim üllatus
+
+Kõige suuremad probleemid olid müügitabeli kordused ja linnanimede ebaühtlane kirjapilt. Positiivne oli see, et tooteandmete kriitilistes väljades puuduvad väärtused ja ebarealistlikud hinnad puudusid.
+
+## Soovitus Toomasele
+
+Kehtestada sisestusreeglid ja valideerimised, mis takistavad korduvaid ID-sid, standardiseerivad asukohanimed ning kontrollivad kliendi- ja tooteviiteid juba andmete sisestamisel.
+
+## Puuduvad ärireeglid
+
+Täpsustada tuleb, kas negatiivsed summad tähistavad tagastusi, tühistamisi või sisestusvigu ning kas kõik puuduva kliendiviitega tehingud on päriselt külalisostud.
+
+## Meeskonna esitlus
+
+[Ava nädala 2 slaidiesitlus](https://docs.google.com/presentation/d/1A8KvN7d0f7EDag7m9cagzEe5bE2fw8dw/edit?slide=id.g3e132ed0bcd_0_4#slide=id.g3e132ed0bcd_0_4)

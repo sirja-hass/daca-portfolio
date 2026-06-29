@@ -1,65 +1,56 @@
--- Nädal 2 Tooteandmete puhastaja (Product Data Cleaner)
---Loo test koopia:
+-- Nädal 2 | Meeskond: Toode | Roll C
+-- Roll: tooteandmete puhastaja (Product Data Cleaner)
 
-CREATE TABLE products_test AS SELECT * FROM products;
-SELECT COUNT(*) AS ridade_arv FROM products_test;
---362 rida
+-- Loo analüüsimiseks värske testkoopia. Originaaltabelit ei muudeta.
+DROP TABLE IF EXISTS products_test;
+CREATE TABLE products_test AS
+SELECT *
+FROM products;
 
---Leia duplikaadid — kas on korduvaid tootenimesid?
-SELECT product_name, COUNT(*) AS koopiate_arv
+SELECT COUNT(*) AS ridade_arv
+FROM products_test;
+-- Testkoopias on 362 rida.
+
+-- Leia korduvad tootenimed.
+SELECT product_name,
+       COUNT(*) AS koopiate_arv
 FROM products_test
 GROUP BY product_name
 HAVING COUNT(*) > 1
 ORDER BY koopiate_arv DESC;
---12 dupikaatset tootenime, kõiki 2 tk
+-- Leitud 12 korduvat tootenime; iga nimi esineb kaks korda.
 
---Leia NULL väärtused kriitilistes väljades:
+-- Kontrolli puuduvaid väärtusi kriitilistes väljades.
 SELECT
-    COUNT(*) FILTER (WHERE product_name IS NULL OR product_name = '') AS null_nimi,
-    COUNT(*) FILTER (WHERE category IS NULL OR category = '') AS null_kategooria,
-    COUNT(*) FILTER (WHERE retail_price IS NULL) AS null_jaehind,
-    COUNT(*) FILTER (WHERE cost_price IS NULL) AS null_omahind
+    COUNT(*) FILTER (WHERE product_name IS NULL OR TRIM(product_name) = '') AS puuduv_nimi,
+    COUNT(*) FILTER (WHERE category IS NULL OR TRIM(category) = '') AS puuduv_kategooria,
+    COUNT(*) FILTER (WHERE retail_price IS NULL) AS puuduv_jaehind,
+    COUNT(*) FILTER (WHERE cost_price IS NULL) AS puuduv_omahind
 FROM products_test;
---Ei lednud ühtegi null ega puuduvat väärtust
+-- Puuduvaid väärtusi ei leitud.
 
---Kontrolli loogilisi vigu — kas on ebareaalseid hindu?
--- Kas on negatiivseid hindu?
-SELECT COUNT(*) AS negatiivne_hind
+-- Kontrolli negatiivseid ja äärmuslikke hindu.
+SELECT product_name,
+       retail_price
 FROM products_test
-WHERE retail_price < 0;
---Puuduvad
-
--- Kas on äärmuslikke hindu (> 1000€)?
-SELECT product_name, retail_price
-FROM products_test
-WHERE retail_price > 1000
+WHERE retail_price < 0
+   OR retail_price > 1000
 ORDER BY retail_price DESC;
---puuduvad
+-- Negatiivseid ega üle 1000 euro suuruseid jaehindu ei leitud.
 
---Kontrolli kategooriate järjekindlust:
-SELECT category, COUNT(*) AS arv
+-- Vaata kategooriate nimekujusid enne standardiseerimist.
+SELECT category,
+       COUNT(*) AS toodete_arv
 FROM products_test
 GROUP BY category
 ORDER BY category;
---Ebajärjekindlaid kategooria nimekujusid ei leitud.
 
---NULL omahind/kategooria
-SELECT *
-FROM products_test
-WHERE cost_price IS NULL
-   OR category IS NULL;
-   --Ridu ei leitud
-
-   -- Ühtlusta kategooriate nimed
+-- Ühtlusta kategooriate tühikud ja suur-/väiketähed.
 UPDATE products_test
 SET category = INITCAP(TRIM(category))
-WHERE category != INITCAP(TRIM(category));
+WHERE category IS DISTINCT FROM INITCAP(TRIM(category));
 
--- Kontrolli tulemust
-SELECT category, COUNT(*) AS arv
-FROM products_test
-GROUP BY category ORDER BY category;
-
+-- Ühenda võimalikud sünonüümid ühtse nimetuse alla.
 UPDATE products_test
 SET category = CASE
     WHEN LOWER(TRIM(category)) IN ('shoes', 'jalanõud', 'footwear') THEN 'Shoes'
@@ -68,16 +59,18 @@ SET category = CASE
     ELSE INITCAP(TRIM(category))
 END;
 
-SELECT COUNT(*)
-FROM products
-WHERE category != INITCAP(TRIM(category));
+-- Valideeri puhastatud testtabel.
+SELECT category,
+       COUNT(*) AS toodete_arv
+FROM products_test
+GROUP BY category
+ORDER BY category;
 
--- Puhastamisraport
--- Duplikaatsed nimed: leitud 12 korduvat tootenime.
--- NULL nimi/hind: puuduvaid väärtusi ei leitud.
--- Loogilised vead: negatiivne või äärmuslik jaehind puudub.
--- Ebajärjekindlad kategooriad: ebajärjekindlaid nimekujusid ei leitud.
--- NULL omahind/kategooria: vigu ei leitud.
--- Kokku: leitud 12 korduvat tootenime.
+SELECT COUNT(*) AS standardiseerimata_kategooriaid
+FROM products_test
+WHERE category IS DISTINCT FROM INITCAP(TRIM(category));
 
- 
+-- Kokkuvõte:
+-- leitud 12 korduvat tootenime;
+-- kriitilisi puuduvaid väärtusi ega ebarealistlikke hindu ei leitud;
+-- kategooriate nimekujud standardiseeriti testtabelis.

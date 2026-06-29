@@ -1,4 +1,8 @@
-# Nädal 1: SQL Basics — UrbanStyle'i andmete uurimine
+# Nädal 1: SQL-i alused — UrbanStyle'i andmete uurimine
+
+## Minu roll
+
+Roll B: kliendiandmete uurija. Analüüsisin `customers` tabeli struktuuri, kirjeldavaid näitajaid ja andmekvaliteeti.
 
 ## Mida ma tegin
 - Uurisin `customers` tabelit SQL-päringutega.
@@ -16,9 +20,13 @@
 - Puuduvate väärtuste leidmine `IS NULL` abil.
 
 ## Failid
+
 - [Minu SQL-päringud](individual/week1_customers_exploration.sql)
 - [Tulemuste kuvatõmmis](individual/week1_results_screenshot.png)
 
+![Nädala 1 SQL-päringute tulemused](individual/week1_results_screenshot.png)
+
 ## Meeskonna töö
+
 - [Meeskonna andmemaastiku kokkuvõte](team/README.md)
 - [Meeskonna slaidid](https://docs.google.com/presentation/d/1dy4WZY9-amFs1SLXhjyp3hn9sgC6R1XiVZKb0keOdTw/edit?slide=id.g3ddb8b9f226_0_140#slide=id.g3ddb8b9f226_0_140)

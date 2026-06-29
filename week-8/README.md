@@ -1,139 +1,60 @@
-# Week 8: UrbanStyle ETL Pipeline
-
-> Nädala 8 portfooliokirje on täiendamisel.
-
-## Minu roll
-
-Roll A: API Query. Minu individuaalne väljund on [`data_fetcher.py`](individual/data_fetcher.py), mis pärib `sales`, `customers` ja `products` tabelid Supabase API-st ning kasutab ühenduse tõrke korral CSV-varuandmeid.
+# Nädal 8: Python, API-d ja ETL-pipeline
 
 ## Projekti eesmärk
 
-UrbanStyle OÜ vajas viisi, kuidas iganädalane müügiülevaade automaatselt koostada. Selle töö jaoks ehitasime Python pipeline'i, mis pärib müügi-, kliendi- ja tooteandmed, puhastab need, arvutab peamised KPI-d ning salvestab tulemused CSV ja HTML raportitena.
+Meeskond automatiseeris UrbanStyle'i iganädalase müügiülevaate. ETL-pipeline pärib andmed Supabase API-st, puhastab ja ühendab tabelid, arvutab KPI-d, loob Plotly visualiseeringud ning ekspordib tulemused CSV- ja HTML-failidena.
 
-Pipeline'i põhivoog:
+## Minu roll
 
-1. Extract - andmete pärimine Supabase API-st või CSV fallback-failidest.
-2. Transform - andmete puhastamine, nädalakoondid, KPI-d ja tabelite ühendamine.
-3. Visualize - Plotly graafikud nädalase käibe ja KPI-de jaoks.
-4. Export - tulemuste salvestamine `output/` kausta.
+Roll A: API Query. Minu moodul [`data_fetcher.py`](individual/data_fetcher.py) vastutab `sales`, `customers` ja `products` tabelite turvalise pärimise eest.
 
-## Failide ülevaade
+Moodul sisaldab:
 
-| Fail | Roll | Kirjeldus |
-| --- | --- | --- |
-| `data_fetcher.py` | Roll A: API Query | Pärib `sales`, `customers` ja `products` tabelid Supabase API-st. Kui API ei tööta, kasutab `datasets/` CSV faile. |
-| `transform.py` | Roll B: Data Processing | Eemaldab duplikaadid, vormindab kuupäevad, arvutab nädalased koondid ja KPI-d ning ühendab müügi- ja kliendiandmed. |
-| `visualize_export.py` | Roll C: Visualization + Saving | Loob Plotly HTML graafikud ja ekspordib tulemused CSV-faili. |
-| `pipeline.py` | Roll D: Automation Script | Käivitab kogu töövoo ühe käsuga. |
-| `config.yaml` | Konfiguratsioon | Määrab analüüsiperioodi ja väljundkausta. |
-| `.env.example` | Näidis | Näitab, milliseid Supabase keskkonnamuutujaid on vaja. |
-| `datasets/` | Fallback data | Kohalikud CSV andmed juhuks, kui Supabase pole kättesaadav. |
-| `output/` | Väljundid | Pipeline'i loodud CSV ja HTML failid. |
-| `logs/` | Logid | Pipeline'i käivituste logifailid. |
+- Supabase'i ühenduse loomist keskkonnamuutujate kaudu;
+- 1000 rea kaupa lehitsemist ehk pagination'it;
+- kuni kolme katsega retry-loogikat;
+- 1, 2 ja 4 sekundi pikkust exponential backoff'i;
+- CSV-varuandmete kasutamist API tõrke korral;
+- selgeid logi- ja veateateid.
 
-## Käivitamine
+## Meeskonna pipeline
 
-Järgnev käivitamisjuhend puudutab meeskonna terviklikku pipeline'i. Selles portfoolios on individuaalse väljundina ainult minu Roll A moodul; meeskonna tulemus on dokumenteeritud `team/` kaustas.
-
-Paigalda sõltuvused:
-
-```bash
-pip install -r requirements.txt
-```
-
-Soovi korral loo `.env` fail Supabase ühenduse jaoks:
-
-```bash
-cp .env.example .env
-```
-
-`.env` faili oodatud muutujad:
-
-```text
-SUPABASE_URL=https://your-project.supabase.co
-SUPABASE_KEY=your-anon-or-service-role-key
-```
-
-Käivita kogu pipeline:
-
-```bash
-python pipeline.py
-```
-
-Kui `.env` puudub, API võti on vale või Supabase ei vasta, kasutab pipeline automaatselt `datasets/` kaustas olevaid CSV fallback-andmeid.
-
-## Konfiguratsioon
-
-Analüüsi periood ja väljundkaust on failis `config.yaml`:
-
-```yaml
-pipeline:
-  start_date: "2023-01-01"
-  end_date: "2024-12-31"
-  output_dir: "output"
-```
-
-Demo kasutab perioodi 2023-01-01 kuni 2024-12-31, sest need aastad on andmetes terviklikud.
+1. **Extract:** andmete pärimine API-st või CSV-varuallikast.
+2. **Transform:** puhastamine, tabelite ühendamine ja KPI-de arvutamine.
+3. **Visualize:** nädalakäibe ja KPI-de Plotly graafikud.
+4. **Export:** tulemuste salvestamine CSV- ja HTML-failidena.
 
 ## Demo tulemus
 
-Viimane edukas käivitus lõi järgmised tulemused:
+Meeskonna kontrollkäivitus lõppes edukalt ning lõi 2023.–2024. aasta andmete põhjal järgmise kokkuvõtte:
 
-```text
-Käive: 2,691,235.81 EUR
-Unikaalseid kliente: 2464
-Keskmine tellimuse väärtus: 287.80 EUR
-Müügiridu API-st: 9411
-Eksporditud ühendatud ridu: 9351
-Nädalakoondid: 105 nädalat
-```
+- kogukäive ligikaudu 2,69 miljonit eurot;
+- 2464 unikaalset klienti;
+- keskmine tellimuse väärtus 287,80 eurot;
+- 105 nädalakoondit.
 
-Loodud failid:
+## Äriline väärtus
 
-```text
-output/pipeline_results_20260625_205349.csv
-output/weekly_revenue_20260625_205349.html
-output/kpi_summary_20260625_205349.html
-logs/pipeline_20260625.log
-```
+Marko ei pea iganädalast müügiülevaadet enam käsitsi koostama. Sama töövoog saab käia ühe käsuga ning tulemus on kohe analüüsiks ja jagamiseks valmis. CSV fallback ja retry-loogika vähendavad välise teenuse tõrgetest tulenevat katkestusriski.
+
+## Turvalisus
+
+API URL ja võti loetakse `.env` failist; tunnuseid ei kirjutata koodi ega lisata GitHubi. Reposse sobib ainult väärtusteta `.env.example` näidis.
 
 ## Väljundid
 
-Pipeline salvestab iga käivituse ajatempliga failinimedega, et varasemaid tulemusi üle ei kirjutataks:
+- [Minu API päringumoodul](individual/data_fetcher.py)
+- [Meeskonna pipeline'i demo ja arhitektuur](team/week8_pipeline_demo.md)
 
-- `pipeline_results_YYYYMMDD_HHMMSS.csv` - ühendatud müügi- ja kliendiandmed.
-- `weekly_revenue_YYYYMMDD_HHMMSS.html` - nädalase käibe Plotly graafik.
-- `kpi_summary_YYYYMMDD_HHMMSS.html` - KPI kokkuvõtte HTML raport.
-- `pipeline_YYYYMMDD.log` - logi extract, transform, visualize ja export sammudest.
-
-## Veakäsitlus
-
-Pipeline on tehtud nii, et demo ei jääks välise teenuse vea tõttu seisma.
-
-- Supabase päringutel on pagination, et suuri tabeleid lugeda 1000 rea kaupa.
-- Ajutise API vea korral proovitakse päringut kuni 3 korda.
-- Retry loogika kasutab exponential backoff'i: 1s, 2s ja 4s.
-- Kui API ei tööta, loetakse andmed `datasets/sales.csv`, `datasets/customers.csv` ja `datasets/products.csv` failidest.
-- Kui visualiseerimine ebaõnnestub, jätkab pipeline CSV ekspordiga.
-- Kui extract, transform või export ebaõnnestub, logitakse viga ja pipeline peatub.
-
-## Äriline järeldus
-
-UrbanStyle'i 2023-2024 puhastatud andmete põhjal oli kogukäive umbes 2.69 miljonit eurot, unikaalseid kliente oli 2464 ja keskmine tellimuse väärtus oli 287.80 eurot.
-
-See tähendab, et Marko ei pea iganädalast müügiülevaadet enam käsitsi koostama. Sama töövoog käib ühe käsuga ning tulemused on kohe CSV ja HTML kujul jagatavad.
-
-## Meeskonna tulemus
-
-Meeskond ühendas neli moodulit üheks ETL-pipeline'iks, mis pärib, puhastab, visualiseerib ja ekspordib andmed. [Vaata meeskonna pipeline'i demo kokkuvõtet](team/week8_pipeline_demo.md).
+Portfoolio sisaldab nõuete järgi minu individuaalset moodulit ja meeskonna demo kirjeldust. Terviklik pipeline koos teiste rollide moodulitega asus meeskonna ühises tööruumis.
 
 ## AI kasutamine
 
-AI-d kasutati abina moodulite kokkusobivuse kontrollimiseks, veerunimede erinevuste leidmiseks, pagination'i ja retry loogika täpsustamiseks, README struktuuri parandamiseks ning pipeline'i terminali- ja logiväljundi selgemaks muutmiseks.
+Kasutasin AI-d moodulite liideste kontrollimiseks, veerunimede erinevuste leidmiseks ning pagination'i, retry-loogika ja dokumentatsiooni täpsustamiseks. Kontrollisin pipeline'i toimimist reaalse tervikkäivitusega.
 
 ## Refleksioon
 
-- **Kuidas API parandab töövoogu võrreldes CSV-ga?** API võimaldab värskeid andmeid pärida automaatselt, ilma faile käsitsi alla laadimata ja asendamata.
-- **Milline etapp oli kõige keerulisem ühendada?** Kõige rohkem kontrolli nõudis moodulite sisend- ja väljundvormingute ühtlustamine.
-- **Kuidas veakäsitlus koodi parandab?** Retry, logimine ja CSV fallback muudavad töövoo väliste tõrgete suhtes vastupidavamaks ning vead on lihtsamini diagnoositavad.
-- **Mida automatiseeriksin järgmises projektis?** Automatiseeriksin ajastatud andmevärskenduse ja raporti saatmise sidusrühmadele.
+- **API eelis CSV ees:** värskeid andmeid saab pärida automaatselt ilma faile käsitsi asendamata.
+- **Keerukaim integratsioonikoht:** moodulite sisend- ja väljundvormingute ühtlustamine.
+- **Veakäsitluse väärtus:** retry, logimine ja fallback muudavad töövoo töökindlamaks ning vead lihtsamini diagnoositavaks.
+- **Järgmine automatiseerimine:** ajastatud andmevärskendus ja raporti automaatne saatmine sidusrühmadele.
