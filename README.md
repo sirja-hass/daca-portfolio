@@ -15,5 +15,5 @@ Liitusin DACA programmiga, sest soovin arendada oma andmeinseneeria oskusi ja sa
 | 3 | SQL JOINs | Valmis |
 | 4 | SQL Aggregation | Valmis |
 | 5-6 | Visualiseerimine | Valmis |
-| 7-8 | Python | Lisamisel |
+| 7-8 | Python | Valmis |
 | 9-10 | Portfoolio + Karjäär | Lisamisel |
