@@ -1,5 +1,11 @@
 # Week 8: UrbanStyle ETL Pipeline
 
+> Nädala 8 portfooliokirje on täiendamisel.
+
+## Minu roll
+
+Roll A: API Query. Minu individuaalne väljund on [`data_fetcher.py`](individual/data_fetcher.py), mis pärib `sales`, `customers` ja `products` tabelid Supabase API-st ning kasutab ühenduse tõrke korral CSV-varuandmeid.
+
 ## Projekti eesmärk
 
 UrbanStyle OÜ vajas viisi, kuidas iganädalane müügiülevaade automaatselt koostada. Selle töö jaoks ehitasime Python pipeline'i, mis pärib müügi-, kliendi- ja tooteandmed, puhastab need, arvutab peamised KPI-d ning salvestab tulemused CSV ja HTML raportitena.
@@ -26,6 +32,8 @@ Pipeline'i põhivoog:
 | `logs/` | Logid | Pipeline'i käivituste logifailid. |
 
 ## Käivitamine
+
+Järgnev käivitamisjuhend puudutab meeskonna terviklikku pipeline'i. Selles portfoolios on individuaalse väljundina ainult minu Roll A moodul; meeskonna tulemus on dokumenteeritud `team/` kaustas.
 
 Paigalda sõltuvused:
 
@@ -115,10 +123,17 @@ UrbanStyle'i 2023-2024 puhastatud andmete põhjal oli kogukäive umbes 2.69 milj
 
 See tähendab, et Marko ei pea iganädalast müügiülevaadet enam käsitsi koostama. Sama töövoog käib ühe käsuga ning tulemused on kohe CSV ja HTML kujul jagatavad.
 
+## Meeskonna tulemus
+
+Meeskond ühendas neli moodulit üheks ETL-pipeline'iks, mis pärib, puhastab, visualiseerib ja ekspordib andmed. [Vaata meeskonna pipeline'i demo kokkuvõtet](team/week8_pipeline_demo.md).
+
 ## AI kasutamine
 
 AI-d kasutati abina moodulite kokkusobivuse kontrollimiseks, veerunimede erinevuste leidmiseks, pagination'i ja retry loogika täpsustamiseks, README struktuuri parandamiseks ning pipeline'i terminali- ja logiväljundi selgemaks muutmiseks.
 
-## Seotud fail
+## Refleksioon
 
-Meeskonna lühike demo-kokkuvõte asub failis `team/week8_pipeline_demo.md`.
+- **Kuidas API parandab töövoogu võrreldes CSV-ga?** API võimaldab värskeid andmeid pärida automaatselt, ilma faile käsitsi alla laadimata ja asendamata.
+- **Milline etapp oli kõige keerulisem ühendada?** Kõige rohkem kontrolli nõudis moodulite sisend- ja väljundvormingute ühtlustamine.
+- **Kuidas veakäsitlus koodi parandab?** Retry, logimine ja CSV fallback muudavad töövoo väliste tõrgete suhtes vastupidavamaks ning vead on lihtsamini diagnoositavad.
+- **Mida automatiseeriksin järgmises projektis?** Automatiseeriksin ajastatud andmevärskenduse ja raporti saatmise sidusrühmadele.

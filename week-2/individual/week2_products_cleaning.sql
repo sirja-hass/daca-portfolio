@@ -72,24 +72,12 @@ SELECT COUNT(*)
 FROM products
 WHERE category != INITCAP(TRIM(category));
 
---puhastamisraport:
-Duplikaatsed nimed
-Leitud 12 duplikaatset tootenime
-
-NULL nimi/hind
-Ei leidnud ühtegi null ega puuduvat väärtust
-
-Loogilised vead
-Negatiivne või äärmuslik jaehind puudub
-
-Ebajärjekindlad kategooriad
-Ebajärjekindlaid kategooria nimekujusid ei leitud.
-
-NULL omahind/kategooria
-Vigu ei leitud
-
-KOKKU probleeme
-Leitud 12 duplikaatset tootenime.
+-- Puhastamisraport
+-- Duplikaatsed nimed: leitud 12 korduvat tootenime.
+-- NULL nimi/hind: puuduvaid väärtusi ei leitud.
+-- Loogilised vead: negatiivne või äärmuslik jaehind puudub.
+-- Ebajärjekindlad kategooriad: ebajärjekindlaid nimekujusid ei leitud.
+-- NULL omahind/kategooria: vigu ei leitud.
+-- Kokku: leitud 12 korduvat tootenime.
 
  
-

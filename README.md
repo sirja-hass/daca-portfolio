@@ -1,19 +1,23 @@
-# DACA Portfoolio -- Sirja Hass
+# DACA portfoolio — Sirja Hass
 
 ## Minust
-Liitusin DACA programmiga, sest soovin arendada oma andmeinseneeria oskusi ja saada praktilist kogemust SQL-i ja Pythoniga. Mind motiveerib võimalus täiendada oma portfooliot ja tõsta oma konkurentsivõimet tööturul. Hindan ka seda, et programm pakub struktureeritud ja praktilist õpet, mida saan kohe rakendada.
+Liitusin DACA programmiga, et arendada oma andmeanalüüsi ja andmeinseneeria oskusi ning saada praktilist kogemust SQL-i, visualiseerimise ja Pythoniga. Siia portfooliosse koondan iga nädala individuaalsed tööd, meeskonna väljundid, peamised leiud ja refleksioonid.
 
 ## Eesmärk
-Õppida andmeanalüüsi -- SQL, Python, visualiseerimine -- ja ehitada professionaalne portfoolio.
+Õppida andmeid uurima, puhastama, ühendama, visualiseerima ja automatiseerima ning ehitada töödest selge ja professionaalne portfoolio.
 
-## Nädala kaupa
+## Tööd nädalate kaupa
+
 | Nädal | Teema | Staatus |
-|-------|-------|---------|
-| 0 | Onboarding | Valmis |
-| 1 | SQL Basics | Valmis |
-| 2 | SQL Cleaning | Valmis |
-| 3 | SQL JOINs | Valmis |
-| 4 | SQL Aggregation | Valmis |
-| 5-6 | Visualiseerimine | Valmis |
-| 7-8 | Python | Lisamisel |
-| 9-10 | Portfoolio + Karjäär | Lisamisel |
+| --- | --- | --- |
+| [0](week-0/README.md) | Onboarding ja töökeskkond | Valmis |
+| [1](week-1/README.md) | SQL-i alused ja andmete uurimine | Valmis |
+| [2](week-2/README.md) | SQL ja andmete puhastamine | Valmis |
+| [3](week-3/README.md) | SQL JOIN-id | Valmis |
+| [4](week-4/README.md) | SQL agregatsioon | Valmis |
+| [5](week-5/README.md) | Visualiseerimise disain | Valmis |
+| [6](week-6/README.md) | Visualiseerimine ja andmelugu | Valmis |
+| [7](week-7/README.md) | Python, pandas ja RFM-analüüs | Valmis |
+| [8](week-8/README.md) | Python, API-d ja ETL-pipeline | Lisamisel |
+| [9](week-9/README.md) | Portfoolio ja karjäär | Lisamisel |
+| [10](week-10/README.md) | Portfoolio ja karjäär | Lisamisel |

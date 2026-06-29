@@ -4,8 +4,7 @@ KRISTILE: TOP 5 KOONDNUMBRIT
 │  1. Müügidomeen, Sirja — 41%                       
 │  2. Kliendidomeen, Tuuli — 73% VIP segment teenib kogu käibest                     
 │  3. Inventuuri domeen, Triin  — 26,3% jalanõude kasum kogukasumist ehk veidi üle veerandi ettevõtte kogukasumist           
-│  4. [Turunduse domeen, Jörgen — 109 uut klienti iga kuu.              
-│  5. [Koondnumber — kogu UrbanStyle]                      
+│  4. Turunduse domeen, Jörgen — 109 uut klienti iga kuu.
 │                                                          
 │  SUURIM ÜLLATUS:                                         
 │  Kui väike osa kogumüügist tuleb bestselleritelt: TOP tooted moodustavad ainult umbes 1.8–2.2% kategooria müügist.                                     

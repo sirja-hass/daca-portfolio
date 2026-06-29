@@ -1,14 +1,24 @@
-See nädal keskendusime arenduskeskkonna seadistamisele ja meeskonna loomisele.
+# Nädal 0: onboarding ja töökeskkond
 
-🔗 Meeskonna repo:https://github.com/sirja-hass/urbanstyle-marketing-data
+Seadistasime isikliku arenduskeskkonna ning lõime meeskonna ühise GitHubi repo, Supabase'i projekti, NotebookLM-i tööruumi ja Team Charteri.
 
-# UrbanStyle.ltd Marketing Toode
-   ## Meeskonnaliikmed
- 
-    Sirja Hass     A: GitHub Repo Seadistaja | Mac |
-    Tuuli Tamm     B: Supabase Seadistaja | Win|
-    Triin Kokmann  C: NotebookLM Seadistaja| Mac |
-    Jörgen Pukk    D: Team Charter Koostaja | Win|
+## Minu roll
 
-   ## Meie eesmärk
-   UrbanStyle andmeanalüüsi tiimi eesmärk on aidata ettevõttel teha andmepõhiseid otsuseid, analüüsides müügi-, kliendi- ja turundusandmeid, et parandada kasvu ja kasumlikkust.
+Roll A: GitHubi repo seadistaja. Lõin meeskonna repo, lisasin README ning kutsusin meeskonnaliikmed koostööpartneriteks.
+
+## Meeskond
+
+| Liige | Esialgne roll | OS |
+| --- | --- | --- |
+| Sirja Hass | A: GitHubi repo seadistaja | macOS |
+| Tuuli Tamm | B: Supabase'i seadistaja | Windows |
+| Triin Kokmann | C: NotebookLM-i seadistaja | macOS |
+| Jörgen Pukk | D: Team Charteri koostaja | Windows |
+
+Meie eesmärk on toetada UrbanStyle'i andmepõhiseid otsuseid müügi-, kliendi- ja turundusandmete analüüsimise kaudu.
+
+## Väljundid
+
+- [Isikliku keskkonna kuvatõmmis](individual/setup_screenshot.png)
+- [Meeskonna 0. nädala kokkuvõte](team/week0_team_summary.md)
+- [UrbanStyle'i meeskonna repo](https://github.com/sirja-hass/urbanstyle-marketing-data)

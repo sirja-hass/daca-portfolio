@@ -1,4 +1,4 @@
-EESKOND: TOODE |  NÄDAL: 2  |  TEGELANE: Toomas Kask    │
+MEESKOND: TOODE | NÄDAL: 2 | TEGELANE: Toomas Kask
 │                                                              
 │  ANDMEKVALITEEDI KOONDRAPORT                                                                                               │
 │  PEAMISED LEIUD:                                             

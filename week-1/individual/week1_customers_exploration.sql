@@ -1,65 +1,63 @@
---Nädal: 1          Meeskond: [Toode]          Roll: B
---ROLL: Kliendiandmete uurija (Customer Data Explorer)
+-- Nädal: 1 | Meeskond: Toode | Roll B
+-- Roll: kliendiandmete uurija (Customer Data Explorer)
 
--- Mitu klienti on kokku?    
-SELECT COUNT(*) AS klientide_arv 
-FROM customers; 
--- Kokku on 3150 klienti
-
---Too välja esimesed 10 rida, et näha veergude struktuuri:
-SELECT * FROM customers 
-LIMIT 10; 
---Veerge on kokku 9, customer_id, first_name, last_name, email,  phone, city, registration_date, loyalty_tier, birth_year
-
---Millistest linnadest kliendid tulevad?
-SELECT Count 
-(DISTINCT city)
+-- Mitu klienti on kokku?
+SELECT COUNT(*) AS klientide_arv
 FROM customers;
---Torkab silma, et linnade seas on palju kordusi, sest erinevus on suurtes ja väikestes tähtedes
+-- Kokku on 3150 klienti.
 
---1. Filtreeri kindla linna kliendid. Kasuta WHERE tingimust:
-SELECT  *
-FROM customers    
-WHERE city = 'Tallinn' OR city='TALLINN'
+-- Too välja esimesed 10 rida, et näha veergude struktuuri.
+SELECT *
+FROM customers
+LIMIT 10;
+-- Veerge on kokku 9: customer_id, first_name, last_name, email,
+-- phone, city, registration_date, loyalty_tier ja birth_year.
+
+-- Millistest linnadest kliendid tulevad?
+SELECT COUNT(DISTINCT city) AS linnade_arv
+FROM customers;
+-- Linnade nimedes on suur- ja väiketähtedest tingitud kordusi.
+
+-- Filtreeri Tallinna kliendid, ühtlustades nimekuju päringus.
+SELECT *
+FROM customers
+WHERE UPPER(TRIM(city)) = 'TALLINN'
 ORDER BY last_name ASC;
-   
--- Tallinn andis 1135 klienti, kui lisasin TALLINN oli 1158 klienti, see näitab et tuleb sellistes päringutes tuleb kirjapilt ühtlustada enne päringut
+-- Nimekuju ühtlustamine suurendas tulemuse 1135 kliendilt 1158 kliendile.
 
---1. Kontrolli registreerimise kuupäevi. Millal esimesed ja viimased kliendid registreerusid?
-SELECT 
-MIN(registration_date) AS vanim,           
-MAX(registration_date) AS uusim    
+-- Kontrolli esimest ja viimast registreerimiskuupäeva.
+SELECT
+    MIN(registration_date) AS vanim,
+    MAX(registration_date) AS uusim
 FROM customers;
 -- Vanim 2020-01-02, uusim 2025-02-27
 
--- Mitu klienti, kus eesnimi on puudu? 
-SELECT 
-COUNT(*) - COUNT(last_name) AS puuduvad_eesnimed    
+-- Mitu klienti on puuduva eesnimega?
+SELECT COUNT(*) - COUNT(first_name) AS puuduvad_eesnimed
 FROM customers;
 -- Kõigil on eesnimed olemas
 
- -- Mitu klienti, kus e-mail on puudu? 
- SELECT 
- COUNT(*) - COUNT(email) AS puuduvad_emailid    
- FROM customers;    `
--- Puud on 380 emaili
+-- Mitu klienti on puuduva e-posti aadressiga?
+SELECT COUNT(*) - COUNT(email) AS puuduvad_emailid
+FROM customers;
+-- E-posti aadress puudub 380 kliendil.
 
---Kas tabelid on dublikaatseid emaile
-SELECT 
- COUNT(email) - COUNT(DISTINCT email) AS korduvad_emailid    
- FROM customers;  
- -- ON 130 duplikaati
+-- Mitu korduvat e-posti aadressi tabelis on?
+SELECT COUNT(email) - COUNT(DISTINCT email) AS korduvad_emailid
+FROM customers;
+-- Korduvaid e-posti aadresse on 130.
 
 
- --Loe kliendid linniti kokku:
-SELECT city, 
-COUNT(*) AS klientide_arv   
-FROM customers   
-GROUP BY city   ORDER BY klientide_arv DESC; 
---Sama probleem, linna nime suur ja väiketähed ei anna õiget ülevaadet
+-- Loe kliendid normaliseeritud linna järgi kokku.
+SELECT INITCAP(TRIM(city)) AS linn,
+       COUNT(*) AS klientide_arv
+FROM customers
+GROUP BY INITCAP(TRIM(city))
+ORDER BY klientide_arv DESC;
 
---Leia uuemad kliendid (viimase 6 kuu registreerimised):
-SELECT  FROM customers  
- WHERE registration_date >= '2024-11-01'   
- ORDER BY registration_date DESC; 
---230 klienti
+-- Leia kliendid, kes registreerusid alates 2024-11-01.
+SELECT *
+FROM customers
+WHERE registration_date >= '2024-11-01'
+ORDER BY registration_date DESC;
+-- Tulemuses on 230 klienti.

@@ -11,3 +11,9 @@ Roll D: Visualization ehk visualiseerimine ja leidude esitamine. Minu ülesanne 
 
 ### AI kasutamine
 Kasutasin AI abi RFM tulemuste visualiseerimiseks Plotly abil ning graafikute värvide ja paigutuse parandamiseks. AI aitas sõnastada ka äritõlgenduse nii, et soovitused oleksid seotud konkreetsete kliendisegmentidega.
+
+### Väljundid
+
+- [Minu Roll D notebook](individual/week7_rfm_D.ipynb)
+- [RFM-segmentide CSV](individual/rfm_segments.csv)
+- [Meeskonna terviklik notebook](team/week7_rfm_complete.ipynb)

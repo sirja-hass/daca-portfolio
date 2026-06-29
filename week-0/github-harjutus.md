@@ -1,1 +1,1 @@
-"# Week 0 GitHub Harjutus" 
+# Nädal 0: GitHubi harjutus

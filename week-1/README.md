@@ -1,23 +1,24 @@
 # Nädal 1: SQL Basics — UrbanStyle'i andmete uurimine
 
 ## Mida ma tegin
-- Uurisin customers tabeleit SQL päringutega
-- Leidsin duplikaadid customers tabelis
-- Uurisin NULL väärtusi ja andmekvaliteeti
+- Uurisin `customers` tabelit SQL-päringutega.
+- Tuvastasin korduvad e-posti aadressid.
+- Uurisin puuduvaid väärtusi ja andmekvaliteeti.
 
 ## Peamised leiud
-- Sales tabelis on kokku 3150 rida
-- Duplikaate on 130
-- Puuduvaid e-maile 380
+- `customers` tabelis on 3150 rida.
+- Korduvaid e-posti aadresse on 130.
+- E-posti aadress puudub 380 kliendil.
 
-## Peamised õpid
-- SELECT, FROM, WHERE, ORDER BY, LIMIT
-- DISTINCT ja COUNT duplikaatide tuvastamiseks
-- NULL väärtuste leidmine IS NULL abil
+## Peamised õppetunnid
+- `SELECT`, `FROM`, `WHERE`, `ORDER BY` ja `LIMIT`.
+- `DISTINCT` ja `COUNT` korduste tuvastamiseks.
+- Puuduvate väärtuste leidmine `IS NULL` abil.
 
 ## Failid
-- `individual/week1_customers_exploration.sql` — minu SQL päringud
-- `individual/week1_results_screenshot.png` — tulemuste pilt
+- [Minu SQL-päringud](individual/week1_customers_exploration.sql)
+- [Tulemuste kuvatõmmis](individual/week1_results_screenshot.png)
 
 ## Meeskonna töö
-- https://docs.google.com/presentation/d/1dy4WZY9-amFs1SLXhjyp3hn9sgC6R1XiVZKb0keOdTw/edit?slide=id.g3ddb8b9f226_0_140#slide=id.g3ddb8b9f226_0_140
+- [Meeskonna andmemaastiku kokkuvõte](team/README.md)
+- [Meeskonna slaidid](https://docs.google.com/presentation/d/1dy4WZY9-amFs1SLXhjyp3hn9sgC6R1XiVZKb0keOdTw/edit?slide=id.g3ddb8b9f226_0_140#slide=id.g3ddb8b9f226_0_140)
